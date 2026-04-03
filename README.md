@@ -1,0 +1,120 @@
+# PromethOS
+
+PromethOS is a skills-first framework for designing, governing, evaluating, and
+evolving agent systems across domains.
+
+It packages reusable `SKILL.md` prompts for agent requirements, architecture,
+context, memory, permissions, tool contracts, guardrails, evaluation, and
+library maintenance.
+
+PromethOS is currently in an early public release (`0.1.x`): the shared
+`skills/` contract is stable enough to use and extend, while installation and
+packaging are still intentionally lightweight and doc-driven.
+
+## What It Does
+
+PromethOS gives an agent a structured way to answer:
+
+- what this agent system is supposed to do,
+- how its subsystems should be designed well,
+- where autonomy and risk boundaries should be drawn,
+- how the agent should be evaluated and improved,
+- how the skills library itself should evolve.
+
+The library is intentionally lightweight: one canonical `skills/` directory,
+plus thin platform-specific entrypoints for the harness you are using.
+When PromethOS coexists with a broader workflow library, PromethOS is intended
+to act as the agent-domain methodology layer rather than a replacement for all
+session-level process control.
+
+## Quickstart
+
+1. Clone the repository.
+2. Pick your harness and follow its install guide:
+   [Codex](.codex/INSTALL.md),
+   [Claude Code](docs/README.claude-code.md), or
+   [Gemini CLI](docs/README.gemini.md).
+3. Restart the harness, then verify that `using-promethos` is visible.
+4. Before contributing, run the repository checks:
+
+```bash
+./scripts/validate-skills.sh
+python3 ./scripts/check-repo-docs.py
+```
+
+## How It Works
+
+1. `using-promethos` decides whether PromethOS should be the primary workflow layer or an agent-domain overlay for the current task.
+2. `flow-*` skills sequence agent-domain design and planning work.
+3. `cap-*`, `guard-*`, and `eval-*` skills improve subsystem quality, safety, and evidence quality.
+4. `meta-*` skills maintain the library itself.
+
+## Support Matrix
+
+| Platform | Status | Install Guide |
+|---|---|---|
+| Claude Code | Documented | [docs/README.claude-code.md](docs/README.claude-code.md) |
+| Codex | Documented | [.codex/INSTALL.md](.codex/INSTALL.md) / [docs/README.codex.md](docs/README.codex.md) |
+| Gemini CLI | Compatible | [docs/README.gemini.md](docs/README.gemini.md) |
+
+## Skill Taxonomy
+
+The current library ships with:
+
+- `flow-*` skills for sequencing and workflow control
+- `cap-*` skills for targeted subsystem design
+- `guard-*` skills for autonomy and scope control
+- `eval-*` skills for measurement and feedback loops
+- `meta-*` skills for maintaining the library itself
+- `using-promethos` as the bootstrap skill
+
+## Compatibility
+
+PromethOS is designed to work both alone and alongside broader workflow skill
+libraries such as superpowers.
+
+- If PromethOS is installed by itself, `using-promethos` can bootstrap the full methodology flow.
+- If a stronger session-level workflow system is already active, let it own generic process control such as brainstorming, generic implementation planning, and session-wide execution discipline.
+- In coexistence mode, use PromethOS for agent-system requirements, architecture, context, memory, permissions, autonomy, evaluation, and library evolution.
+
+See [docs/COMPATIBILITY.md](docs/COMPATIBILITY.md) for the coexistence rules.
+
+## Repository Layout
+
+```text
+skills/
+docs/
+.codex/
+.github/
+GEMINI.md
+gemini-extension.json
+scripts/
+```
+
+## Contributing
+
+Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) before
+adding or restructuring skills. For public vulnerability reports, follow
+[SECURITY.md](SECURITY.md) instead of opening a detailed public issue.
+
+## Roadmap
+
+Near-term priorities are tracked in [docs/ROADMAP.md](docs/ROADMAP.md). The
+focus is on evaluator docs, worked examples, and runtime-grounded references,
+not on expanding the taxonomy for its own sake.
+
+The first evaluator-stack documents now live in
+[docs/evaluators/README.md](docs/evaluators/README.md).
+
+Worked examples for core skills are indexed in
+[docs/examples/README.md](docs/examples/README.md).
+
+Runtime-grounded references are collected in
+[docs/references/README.md](docs/references/README.md).
+
+The first reusable eval pack is available at
+[docs/evals/README.md](docs/evals/README.md).
+
+## License
+
+PromethOS is released under the MIT License. See [LICENSE](LICENSE).

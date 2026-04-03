@@ -1,0 +1,6 @@
+{
+  "name": "promethos",
+  "description": "PromethOS workflow skills for planning, design, safety, and evaluation",
+  "version": "0.1.0",
+  "contextFileName": "GEMINI.md"
+}
