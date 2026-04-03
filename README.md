@@ -7,9 +7,9 @@ It packages reusable `SKILL.md` prompts for agent requirements, architecture,
 context, memory, permissions, tool contracts, guardrails, evaluation, and
 library maintenance.
 
-PromethOS is currently in an early public release (`0.1.x`): the shared
-`skills/` contract is stable enough to use and extend, while installation and
-packaging are still intentionally lightweight and doc-driven.
+PromethOS is currently in an early public preview: the shared `skills/`
+contract is stable enough to use and extend, while installation and packaging
+are still intentionally lightweight and doc-driven.
 
 ## What It Does
 
