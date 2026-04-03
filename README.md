@@ -35,12 +35,6 @@ session-level process control.
    [Claude Code](docs/README.claude-code.md), or
    [Gemini CLI](docs/README.gemini.md).
 3. Restart the harness, then verify that `using-promethos` is visible.
-4. Before contributing, run the repository checks:
-
-```bash
-./scripts/validate-skills.sh
-python3 ./scripts/check-repo-docs.py
-```
 
 ## How It Works
 
@@ -96,24 +90,6 @@ scripts/
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) before
 adding or restructuring skills. For public vulnerability reports, follow
 [SECURITY.md](SECURITY.md) instead of opening a detailed public issue.
-
-## Roadmap
-
-Near-term priorities are tracked in [docs/ROADMAP.md](docs/ROADMAP.md). The
-focus is on evaluator docs, worked examples, and runtime-grounded references,
-not on expanding the taxonomy for its own sake.
-
-The first evaluator-stack documents now live in
-[docs/evaluators/README.md](docs/evaluators/README.md).
-
-Worked examples for core skills are indexed in
-[docs/examples/README.md](docs/examples/README.md).
-
-Runtime-grounded references are collected in
-[docs/references/README.md](docs/references/README.md).
-
-The first reusable eval pack is available at
-[docs/evals/README.md](docs/evals/README.md).
 
 ## License
 
