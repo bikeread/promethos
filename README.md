@@ -1,5 +1,7 @@
 # PromethOS
 
+English | [简体中文](README.zh-CN.md)
+
 PromethOS is a skills-first framework for designing, governing, evaluating, and
 evolving agent systems across domains.
 
@@ -90,6 +92,10 @@ scripts/
 Contributions are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) before
 adding or restructuring skills. For public vulnerability reports, follow
 [SECURITY.md](SECURITY.md) instead of opening a detailed public issue.
+
+## Community
+
+- Community link: [LINUX DO](https://linux.do)
 
 ## License
 
