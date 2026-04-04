@@ -1,8 +1,9 @@
 ---
 name: cap-permission-model-design
-description: Translate an already chosen autonomy policy into concrete permission classes, defaults, confirmation mechanics, and denial behavior.
+description: Map an autonomy policy to concrete permission classes.
 when_to_use: >-
-  Use when the autonomy policy is already known and you need concrete permission mechanics for tools and action classes. Examples: "map these actions into permission classes", "design the enforcement mechanics for this approval policy", "what are the concrete permission defaults". Not for deciding the overall autonomy policy or human checkpoint philosophy.
+  Use when the autonomy policy is set and you need permission classes,
+  defaults, approval modes, and denial behavior for each action.
 ---
 
 # Goal
@@ -20,6 +21,12 @@ predictable, reviewable, and safe to enforce.
 - Replacing explicit permission mechanics with vague caution language
 
 ## Workflow
+
+### Trigger signals
+- Autonomy policy exists but tool-level permissions haven't been mapped
+- User asks "哪些操作需要审批" or "what needs approval"
+- Checkpoint rules exist in prose but not as enforceable defaults
+- Not for deciding the overall autonomy policy — that belongs in guardrails
 
 ### 1. Inventory concrete action classes
 List the reads, writes, shell commands, external calls, and irreversible side

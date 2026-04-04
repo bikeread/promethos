@@ -1,8 +1,9 @@
 ---
 name: flow-verification-before-completion
-description: Verify an agent's behavior with fresh evidence before claiming it is complete, fixed, or ready.
+description: Verify with fresh evidence before claiming work is done.
 when_to_use: >-
-  Use when work appears done and you are about to claim success, ship, hand off, or move on. Examples: "verify this agent is ready", "check before we call this done", "make sure the fix really holds"
+  Use PROACTIVELY when about to declare success, ship, or move on. Run
+  checks first — do not wait for the user to ask for verification.
 ---
 
 # Goal
@@ -19,6 +20,13 @@ evidence.
 - Treating partial checks as proof of total correctness
 
 ## Workflow
+
+### Trigger signals (for proactive recognition)
+- You are about to say "done" or "complete"
+- The user says "差不多了吧" or "is it ready"
+- A fix was applied but not re-tested
+- Acceptance criteria exist but have not been checked with fresh evidence
+- Someone is about to claim completion based on inspection alone
 
 ### 1. Translate each claim into a check
 List the specific requirement, fix, or success statement you are about to make

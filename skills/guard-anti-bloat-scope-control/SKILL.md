@@ -1,8 +1,9 @@
 ---
 name: guard-anti-bloat-scope-control
-description: Keep agent projects and skills narrowly scoped so they solve the target problem without uncontrolled growth.
+description: Cut scope back to the smallest useful job.
 when_to_use: >-
-  Use when a plan, skill, or agent starts expanding beyond its original purpose. Examples: "this skill now covers two decisions", "this agent plan keeps absorbing side quests", "trim this scope before it sprawls"
+  Use PROACTIVELY when a plan, skill, or agent absorbs side quests and
+  keeps growing. Trim to the core job before complexity gets worse.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ understandable.
 - Treating simplicity as the same thing as incompleteness
 
 ## Workflow
+
+### Trigger signals (for proactive recognition)
+- A plan or skill keeps gaining sections without removing old ones
+- The user says "越搞越复杂" or "this keeps getting bigger"
+- A CLAUDE.md or system prompt exceeds the length that made it effective
+- You catch yourself adding a "nice to have" not in the original goal
 
 ### 1. Restate the smallest useful job
 Write the one thing this plan, skill, or agent must accomplish right now, and

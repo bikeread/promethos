@@ -1,8 +1,9 @@
 ---
 name: flow-agent-architecture-design
-description: Design the architecture of an agent system, including core responsibilities and component boundaries.
+description: Choose single-agent vs multi-agent and set boundaries.
 when_to_use: >-
-  Use when deciding how an agent should be structured or refactored. Examples: "design this agent architecture", "should this be single-agent or multi-agent", "how should tools, memory, and planning split up"
+  Use when the agent's job is clear and you need to pick the right
+  structure, component split, or single-vs-multi-agent decision.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ unnecessary complexity.
 - Defaulting to multi-agent patterns for status or novelty
 
 ## Workflow
+
+### Trigger signals
+- Requirements are pinned down but no architecture exists yet
+- User asks "要几个 agent" or "should this be one agent or many"
+- Tools and memory needs are listed but not assigned to components
+- An existing agent is being refactored because its boundaries are wrong
 
 ### 1. Restate the architectural pressure
 Summarize the requirement forces that actually matter: tool use, planning

@@ -1,8 +1,9 @@
 ---
 name: flow-agent-implementation-planning
-description: Turn an approved agent design into a concrete, ordered implementation plan with checkpoints and validation.
+description: Turn an approved agent design into ordered build steps.
 when_to_use: >-
-  Use when architecture is approved and work needs to be broken into executable tasks. Examples: "write the build plan", "turn this design into steps", "what order should we implement this agent"
+  Use when architecture is settled and you need a concrete implementation
+  order with tasks, checkpoints, and validation steps.
 ---
 
 # Goal
@@ -19,6 +20,11 @@ verified along the way.
 - Writing vague tasks that hide complexity
 
 ## Workflow
+
+### Trigger signals
+- Architecture is approved but no build order exists
+- User says "接下来怎么搞" or "what do we build first"
+- The conversation is about to jump from design to code without a task breakdown
 
 ### 1. Freeze the implementation surface
 Translate the architecture into concrete files, modules, or documents to create

@@ -1,8 +1,9 @@
 ---
 name: cap-tool-contract-design
-description: Design agent tools with clear inputs, outputs, error semantics, idempotency rules, and side-effect visibility.
+description: Design a tool interface an agent can use correctly.
 when_to_use: >-
-  Use when adding or revising a tool that an agent will call. Examples: "design this tool interface", "what should this tool return", "how should tool errors behave"
+  Use when a tool contract is unclear or an agent misuses a tool because
+  the inputs, errors, or side effects are underspecified.
 ---
 
 # Goal
@@ -20,6 +21,12 @@ misuse silently.
 - Choosing the approval or autonomy policy that governs the tool
 
 ## Workflow
+
+### Trigger signals
+- Agent calls a tool with wrong arguments repeatedly
+- Tool errors are vague and the agent cannot recover
+- User says "it keeps misusing this tool"
+- A new tool is being added without a documented contract
 
 ### 1. State the job the tool owns
 Describe the single job the tool performs and the caller state it expects before

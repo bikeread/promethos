@@ -1,8 +1,9 @@
 ---
 name: flow-agent-requirements-clarification
-description: Clarify what an agent system should do, for whom, under what constraints, and how success will be judged.
+description: Turn a vague agent idea into a concrete brief.
 when_to_use: >-
-  Use when a new agent idea is still fuzzy and needs explicit goals, boundaries, inputs, outputs, and risks. Examples: "help me define this agent", "what exactly should this agent do", "clarify requirements before we build"
+  Use when the agent idea is still fuzzy and you need to pin down the job,
+  users, boundaries, risks, and success criteria before designing.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ implementation planning.
 - Writing detailed implementation tasks
 
 ## Workflow
+
+### Trigger signals
+- User describes an agent idea without clear boundaries or success criteria
+- User says "帮我搞个 bot" or "I want an assistant that..."
+- Features are listed without stating who the user is or what success looks like
+- Someone skips straight to architecture before the goal is pinned down
 
 ### 1. Identify the operator, beneficiary, and job
 State who is asking for the agent, who benefits from its work, and what job the

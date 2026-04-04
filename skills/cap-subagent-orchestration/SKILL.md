@@ -1,8 +1,9 @@
 ---
 name: cap-subagent-orchestration
-description: Given that delegation is warranted, design how subagents should split ownership, receive context, and merge results safely.
+description: Split delegated work across subagents with clear ownership.
 when_to_use: >-
-  Use when an architecture or workflow has already chosen delegation and now needs a concrete orchestration design. Examples: "how do we split the delegated work", "design the subagent handoff", "how should these agents merge results"
+  Use when delegation is warranted and you need to decide how workers
+  split ownership, receive context, and merge results safely.
 ---
 
 # Goal
@@ -21,6 +22,11 @@ integration.
 - Delegating urgent blocking work without a clear handoff
 
 ## Workflow
+
+### Trigger signals
+- Architecture calls for multiple agents but ownership boundaries are not drawn
+- User asks "怎么分工" or "how should we split the work"
+- Subagents are being launched without clear context contracts or merge rules
 
 ### 1. Restate the delegation boundary
 Confirm what part of the system or workflow is already designated for

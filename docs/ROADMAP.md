@@ -10,6 +10,7 @@ PromethOS `0.1.x` already has a usable methodology core:
 - an initial evaluator stack under `docs/evaluators/`
 - first worked examples for five core skills
 - first runtime-grounded references for context, memory, permissions, and plan flow
+- first maintainer-facing abstraction docs under `docs/framework/`
 - an initial eval pack under `docs/evals/`
 
 What it does not yet have is enough reusable evidence to prove large, repeatable
@@ -46,6 +47,9 @@ When mining patterns from the upstream source workspace:
 - Prefer a `reference` when the material is a runtime constraint, compatibility note, or implementation detail.
 - Prefer an `eval` when the main value is proving behavior rather than instructing it.
 - Keep provider-specific runtime internals out of taxonomy skill bodies unless no public abstraction exists.
+
+See [framework/extraction-governance.md](framework/extraction-governance.md)
+for the maintainer-facing version of these placement rules.
 
 ## Exit Criteria For The Next Release
 

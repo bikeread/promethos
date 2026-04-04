@@ -1,8 +1,9 @@
 ---
 name: cap-memory-strategy-design
-description: Define how an agent should use session, project, preference, and retrieval-backed memory without mixing their responsibilities.
+description: Choose what the agent remembers vs fetches fresh.
 when_to_use: >-
-  Use when designing agent memory behavior or deciding where information should persist. Examples: "design the memory model", "what belongs in session vs project memory", "how should this agent remember preferences"
+  Use when deciding what persists across turns or sessions and what should
+  be retrieved on demand. Covers session, project, and preference memory.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ without becoming stale, noisy, or risky.
 - Keeping every observation forever
 
 ## Workflow
+
+### Trigger signals
+- User says "它忘了" or "it keeps forgetting"
+- Agent has no memory configuration but handles multi-session work
+- Preferences are being re-stated every conversation
+- Memory is growing without expiry rules
 
 ### 1. Classify the information by durability and ownership
 Separate session state, project facts, user preferences, retrieved records, and

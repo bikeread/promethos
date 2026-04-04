@@ -13,6 +13,18 @@ PromethOS is currently in an early public preview: the shared `skills/`
 contract is stable enough to use and extend, while installation and packaging
 are still intentionally lightweight and doc-driven.
 
+## Design Lineage
+
+PromethOS is downstream of Claude Code agent-design practice, but it is not a
+copy of the Claude Code runtime.
+
+The library extracts reusable agent-development principles from upstream
+runtime experience, then expresses them as portable skills, references, and
+evals for broader reuse.
+
+Maintainer-facing abstraction docs live under
+[docs/framework/README.md](docs/framework/README.md).
+
 ## What It Does
 
 PromethOS gives an agent a structured way to answer:
@@ -86,6 +98,13 @@ GEMINI.md
 gemini-extension.json
 scripts/
 ```
+
+Key maintainer docs:
+
+- [docs/framework/README.md](docs/framework/README.md)
+- [docs/references/README.md](docs/references/README.md)
+- [docs/evals/README.md](docs/evals/README.md)
+- [docs/ROADMAP.md](docs/ROADMAP.md)
 
 ## Contributing
 

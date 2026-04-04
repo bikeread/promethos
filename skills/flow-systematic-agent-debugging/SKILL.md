@@ -1,8 +1,9 @@
 ---
 name: flow-systematic-agent-debugging
-description: Diagnose agent failures methodically, using evidence to isolate root causes before changing behavior.
+description: Turn a vague agent failure into a root cause and small fix.
 when_to_use: >-
-  Use when an agent misbehaves, loops, hallucinates, calls tools incorrectly, or degrades under context pressure. Examples: "debug this agent", "why is the agent looping", "find the root cause of this tool failure"
+  Use PROACTIVELY when an agent fails repeatedly or loops. Reproduce the
+  symptom, form hypotheses, test the smallest fix before redesigning.
 ---
 
 # Goal
@@ -19,6 +20,13 @@ fix.
 - Rewriting large parts of the system without isolating the failure mode
 
 ## Workflow
+
+### Trigger signals (for proactive recognition)
+- The same tool call fails more than once
+- The agent loops back to a step it already tried
+- The user says "又出错了" or "it broke again"
+- Output quality degrades after a change
+- A hallucination appears in tool-calling arguments
 
 ### 1. Reproduce and classify the symptom
 State what went wrong, under what conditions it happens, and whether it looks

@@ -1,8 +1,10 @@
 ---
 name: using-promethos
-description: Load and apply the PromethOS skills library for agent-system design, governance, evaluation, and evolution work across domains.
+description: Route agent-design work to the right PromethOS skill.
 when_to_use: >-
-  Use when the task is explicitly about PromethOS, or when the work is about designing, governing, evaluating, or evolving an agent system across any domain. Examples: "use PromethOS", "what skill applies to this agent architecture", "design the context strategy for this agent", "set the autonomy policy for this agent", or "evaluate this agent workflow". If another skill library already owns session-wide process control, let it keep that role and use PromethOS as the agent-domain methodology layer.
+  Use PROACTIVELY when the user builds, debugs, or evolves an agent — even
+  without saying "agent". Signals: editing CLAUDE.md, configuring AI
+  behavior, or complaining about bot failures.
 ---
 
 # Goal
@@ -22,6 +24,70 @@ control.
 - Treating one provider's tool names as universal
 
 ## Workflow
+
+### 0. Recognize agent-design signals in ordinary language
+
+Before waiting for an explicit request, scan the conversation for signals that
+the user is working on an agent system. The examples below show common
+phrasing and the reasoning that connects it to a PromethOS skill.
+
+<example>
+user: "帮我写个 CLAUDE.md，让它能自动审 PR"
+<commentary>
+The user is configuring an AI assistant's behavior instructions.
+The goal is still fuzzy — no clear boundaries, risks, or success criteria.
+→ flow-agent-requirements-clarification
+</commentary>
+</example>
+
+<example>
+user: "这个 bot 老是把不该删的文件删了"
+<commentary>
+An agent is taking destructive actions it shouldn't. Two possible paths:
+- If the root cause is unknown → flow-systematic-agent-debugging
+- If the cause is clear and the issue is missing boundaries → guard-safe-autonomy-guardrails
+Ask one clarifying question to choose the path.
+</commentary>
+</example>
+
+<example>
+user: "我想让它记住我喜欢用 pytest 不用 unittest"
+<commentary>
+The user wants the AI to persist a preference across sessions.
+This is a memory-layer question — what to store, where, how long.
+→ cap-memory-strategy-design
+</commentary>
+</example>
+
+<example>
+user: "这个 agent 功能越加越多，快控制不住了"
+<commentary>
+Scope is expanding beyond the original intent. The user feels the growth
+but may not know the term "scope creep".
+→ guard-anti-bloat-scope-control
+</commentary>
+</example>
+
+<example>
+user: "差不多做完了，帮我看看还有没有问题"
+<commentary>
+Work appears done. Before claiming completion, verify with fresh evidence.
+→ flow-verification-before-completion
+</commentary>
+</example>
+
+<example>
+user: "要不要拆成两个 agent 分头干"
+<commentary>
+The user is considering an architecture decision — single-agent vs
+multi-agent. Requirements must be clear first.
+- If requirements are already clear → flow-agent-architecture-design
+- If the idea is still vague → flow-agent-requirements-clarification first
+</commentary>
+</example>
+
+**Success criteria**: Agent-design intent is caught from everyday language,
+not only from explicit "PromethOS" or "agent" keywords.
 
 ### 1. Check whether the task is truly about agent systems
 Before taking meaningful action, decide whether the task is actually about

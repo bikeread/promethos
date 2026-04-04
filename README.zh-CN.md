@@ -11,6 +11,17 @@ agent 系统。
 PromethOS 目前仍处于早期公开预览阶段：共享的 `skills/` 契约已经足够稳定，可
 以实际使用和扩展，但安装与分发仍然有意保持为轻量、以文档为主的方式。
 
+## 设计谱系
+
+PromethOS 的内容来源上游是 Claude Code 的 agent 设计实践，但它并不是 Claude
+Code runtime 的照搬版本。
+
+这套库的目标是把上游运行时经验里可复用的 agent 开发原则抽出来，再沉淀成可跨
+harness 复用的 skills、references 和 evals。
+
+面向维护者的抽象框架文档见
+[docs/framework/README.md](docs/framework/README.md)。
+
 ## 项目解决什么问题
 
 PromethOS 为 agent 提供了一套结构化方法，用于回答这些关键问题：
@@ -87,6 +98,13 @@ GEMINI.md
 gemini-extension.json
 scripts/
 ```
+
+关键维护文档：
+
+- [docs/framework/README.md](docs/framework/README.md)
+- [docs/references/README.md](docs/references/README.md)
+- [docs/evals/README.md](docs/evals/README.md)
+- [docs/ROADMAP.md](docs/ROADMAP.md)
 
 ## 参与贡献
 

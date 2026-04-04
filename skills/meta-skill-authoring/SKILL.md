@@ -1,8 +1,9 @@
 ---
 name: meta-skill-authoring
-description: Create or revise a skill in this agent-development library with clear scope, triggers, and structure.
+description: Draft, rename, or tighten a skill in this library.
 when_to_use: >-
-  Use when the right remediation layer is already known to be a skill and you need to create, rename, or tighten it. Examples: "draft the skill for this repeated decision", "refactor this skill boundary", "turn this already-approved pattern into a skill". Not for first deciding whether an incident should become a guardrail, eval, rule, or skill.
+  Use when a repeated pattern has earned its own skill and you need to
+  create or revise it. Not for deciding whether it should be a skill.
 ---
 
 # Goal
@@ -19,6 +20,11 @@ clear enough to be useful without overlapping the rest of the library.
 - Writing a large reference library before the core workflow is stable
 
 ## Workflow
+
+### Trigger signals
+- The same decision pattern has appeared three or more times
+- A postmortem concluded "this should be a skill"
+- An existing skill's scope or trigger language needs revision
 
 ### 1. Prove the behavior is reusable
 Check whether the pattern is recurring, expensive to get wrong, and stable

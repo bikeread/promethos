@@ -1,8 +1,9 @@
 ---
 name: eval-agent-evaluation-harness
-description: Design a focused evaluation harness that exercises key agent behaviors, edge cases, and regressions.
+description: Build a small eval set that catches agent regressions.
 when_to_use: >-
-  Use when creating or improving how an agent is evaluated. Examples: "design the eval suite", "what should we test for this agent", "build a minimal evaluation harness"
+  Use when you need to test whether an agent actually works and catch
+  regressions early without building a giant benchmark.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ false confidence early.
 - Equating one happy-path demo with real evaluation coverage
 
 ## Workflow
+
+### Trigger signals
+- Agent is nearing completion but has no test cases
+- User asks "怎么验" or "how do we know it works"
+- Behavior was recently changed and nothing checks for regressions
+- Agent has been deployed but no one defined what "working correctly" means
 
 ### 1. Choose the behaviors that matter most
 Identify the actions or decisions that would make the agent untrustworthy if

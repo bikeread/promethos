@@ -1,8 +1,9 @@
 ---
 name: eval-postmortem-to-skill
-description: Turn incidents, corrections, and successful workflows into reusable improvements across skills, guardrails, rules, and evaluations.
+description: Turn an incident or success into a reusable improvement.
 when_to_use: >-
-  Use after an incident or unusually successful workflow when you need to decide what reusable improvement should come out of it. Examples: "what reusable improvement should come from this failure", "should this incident become a guardrail or eval", "turn this incident into a reusable improvement". Not for drafting the final skill itself once the remediation layer is already known.
+  Use after a failure, correction, or great workflow to decide what
+  reusable change — guardrail, eval, skill, or rule — should come from it.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ evaluation stack.
 - Creating a new skill before understanding the actual pattern
 
 ## Workflow
+
+### Trigger signals
+- A bug was just fixed and user asks "怎么防止再犯" or "how do we prevent this"
+- A debugging session ended with a confirmed root cause
+- An unexpectedly smooth workflow deserves capture before context is lost
+- Not for drafting the final skill once the remediation layer is already chosen
 
 ### 1. Capture the incident or success as evidence
 Record what triggered the situation, what the agent tried to do, what happened,

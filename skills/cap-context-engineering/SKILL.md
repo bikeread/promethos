@@ -1,8 +1,9 @@
 ---
 name: cap-context-engineering
-description: Design what context an agent sees, when it sees it, and how that context is compressed or retrieved.
+description: Decide what the agent reads now vs retrieves later.
 when_to_use: >-
-  Use when deciding what information to load into the agent, what to defer, and how to control context growth. Examples: "design the context strategy", "what should the agent read", "how do we avoid context bloat"
+  Use when the agent reads too much, misses key files, or carries context
+  that grows without helping. Design eager vs deferred loading.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ overloading it or hiding critical information.
 - Dumping every possibly relevant file into context
 
 ## Workflow
+
+### Trigger signals
+- Agent loads many files but still misses the relevant one
+- Context window usage is high and growing
+- User says "it keeps loading too much" or "why didn't it read the right file"
+- System prompt is getting long without a refresh or compression strategy
 
 ### 1. Define the task loop the agent must sustain
 Describe the recurring loop the agent is performing so context choices can be

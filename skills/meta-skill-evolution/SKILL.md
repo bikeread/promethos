@@ -1,8 +1,9 @@
 ---
 name: meta-skill-evolution
-description: Review and evolve the agent-development skill library so it stays coherent, small, and useful.
+description: Review and prune the skill library for coherence.
 when_to_use: >-
-  Use when the library feels bloated, redundant, stale, or hard to trigger. Examples: "clean up this skill library", "should these two skills merge", "what should move into v2"
+  Use when the library feels crowded, redundant, or stale and you need
+  to decide what to keep, merge, split, archive, or promote.
 ---
 
 # Goal
@@ -19,6 +20,12 @@ and promoting only the patterns that earn long-term reuse.
 - Expanding scope just to make the library feel more complete
 
 ## Workflow
+
+### Trigger signals
+- Two skills seem to overlap in scope
+- A skill has not been triggered in a long time
+- Users complain the library is confusing or hard to navigate
+- Skill count is growing without clear value
 
 ### 1. Inventory the library by behavior, not by file count
 List each skill's purpose, trigger, current usefulness, and nearest neighbors.

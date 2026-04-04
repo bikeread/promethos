@@ -1,8 +1,9 @@
 ---
 name: guard-safe-autonomy-guardrails
-description: Define what an agent may do autonomously and what must require a human checkpoint.
+description: Set what the agent may do alone vs what needs human review.
 when_to_use: >-
-  Use when designing or tightening the agent's autonomy policy, checkpoint rules, or stop conditions. Examples: "what can this agent do on its own", "where must this agent stop and ask", "set the autonomy policy for this agent". Not for translating policy into concrete permission classes or runtime enforcement mechanics.
+  Use PROACTIVELY when an agent design has no checkpoint policy yet or the
+  agent just did something risky the user did not expect.
 ---
 
 # Goal
@@ -21,6 +22,13 @@ without silently taking high-risk actions.
 - Designing the full tool contract for every tool
 
 ## Workflow
+
+### Trigger signals (for proactive recognition)
+- An agent has write or delete access but no checkpoint policy
+- The user lists agent capabilities without mentioning limits
+- The agent just performed a risky action the user didn't expect
+- The conversation moved from "what should it do" to "how" without setting boundaries
+- Not for mapping the policy into concrete permission classes or runtime enforcement
 
 ### 1. Enumerate the actions the agent can actually take
 List concrete actions in operational language, such as reading, summarizing,
