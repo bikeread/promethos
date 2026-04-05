@@ -2,51 +2,49 @@
 
 ## Purpose
 
-Check whether PromethOS handles a straightforward design-and-planning request
-with the right flow, artifact types, and scope discipline.
+Check whether PromethOS turns a vague agent request into a usable requirements
+brief before drifting into architecture or implementation planning.
 
 ## Prompt
 
 ```text
-I want to publish PromethOS as a standalone public repository that works across Claude Code, Codex, and Gemini CLI. Help me define the first release and turn it into an implementation plan.
+I want an agent that helps my team triage incident reports and draft follow-up tasks, but I'm not sure what the first version should actually do.
 ```
 
 ## Primary Behaviors Under Test
 
-- requirements clarification before detailed planning
-- explicit `v1` scope and non-goals
-- clean separation between design decisions and implementation tasks
-- cross-platform thinking without forking the skill library
+- requirements clarification before architecture or implementation planning
+- explicit job, operator, beneficiary, and primary artifact
+- bounded tool/context surface with visible non-goals
+- minimum useful `v1` scope and open questions
 
 ## Recommended Skill Path
 
-- `using-promethos`
-- `flow-agent-requirements-clarification`
-- `flow-agent-architecture-design` or direct planning if architecture is already fixed
-- `flow-agent-implementation-planning`
-- optional support from `guard-anti-bloat-scope-control`
+- `route-agent-design`
+- `define-agent-requirements`
+- optional `trim-agent-scope` if the request balloons
 
 ## Required Signals
 
-- the run identifies the core job and primary artifact
-- the run sets a minimum useful first release
-- the run keeps one canonical `skills/` directory
-- the final planning artifact contains concrete file scope, task order, and verification steps
+- the run identifies the operator, beneficiary, repeated job, and primary artifact
+- the run defines a minimum useful `v1` instead of a feature heap
+- the run bounds inputs, outputs, tools, and approval surface
+- the run records non-goals, risks, and open questions
 
 ## Failure Signals
 
-- jumps straight into implementation without clarifying scope
-- proposes provider-specific skill forks as the default design
-- mixes open-source release design with unrelated runtime-product ambitions
-- returns only vague phases instead of a verifiable plan
+- jumps straight into architecture or implementation without clarifying scope
+- describes the agent by personality or vibe instead of job
+- leaves success criteria or tool boundaries implicit
+- returns only brainstorming prose instead of a reusable brief
 
 ## Inspect These Artifacts
 
 - requirements brief or equivalent scope artifact
-- implementation plan or equivalent ordered task list
 - non-goals and acceptance criteria
+- `v1` scope plus risks/open questions
 
 ## Variance Notes
 
-It is acceptable if the run skips architecture design only when the repository
-shape is already treated as approved and the planning artifact stays coherent.
+Different brief formats are acceptable. The important point is that the run
+produces a concrete brief before architecture or implementation planning.

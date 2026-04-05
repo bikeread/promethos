@@ -21,9 +21,9 @@ Design the context and memory strategy for a long-running repo-maintenance agent
 
 ## Recommended Skill Path
 
-- `using-promethos`
-- `cap-context-engineering`
-- `cap-memory-strategy-design`
+- `route-agent-design`
+- `design-agent-context`
+- `design-agent-memory`
 - optional use of runtime-grounded references from `docs/references/`
 
 ## Required Signals

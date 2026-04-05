@@ -55,8 +55,8 @@ A good skill answers one repeatable question such as:
 Claude Code exposes both phase control and subsystem constraints. PromethOS
 should keep those distinct:
 
-- `flow-*` owns what happens next
-- `cap-*` owns how a subsystem should be designed well
+- core entry skills own the next high-leverage agent-design decision
+- design-deepening skills own how a subsystem should be designed well
 
 This prevents planning, context design, memory design, and permission design
 from collapsing into one oversized skill.
@@ -66,8 +66,8 @@ from collapsing into one oversized skill.
 Claude Code shows both high-level approval boundaries and concrete permission
 configuration. PromethOS should preserve that split:
 
-- `guard-*` decides what the agent may do on its own
-- `cap-*` decides how that policy becomes concrete mechanics
+- `set-agent-autonomy-boundaries` decides what the agent may do on its own
+- `design-agent-permissions` decides how that policy becomes concrete mechanics
 
 This keeps risk philosophy separate from runtime enforcement detail.
 
@@ -78,8 +78,8 @@ remembers later" are different problems.
 
 PromethOS should keep those as separate design surfaces:
 
-- `cap-context-engineering` owns current working context
-- `cap-memory-strategy-design` owns persistence, freshness, and recall layers
+- `design-agent-context` owns current working context
+- `design-agent-memory` owns persistence, freshness, and recall layers
 
 ### 5. Treat delegation as conditional, not default
 
@@ -129,13 +129,13 @@ PromethOS should therefore evolve through:
 
 | Claude Code signal | Reusable principle | PromethOS landing zone |
 |---|---|---|
-| Plan-mode phases and interview flow | Agent work benefits from inspectable phases and explicit artifacts | `flow-*` skills plus runtime `references` |
-| Permission modes, rules, and approval paths | Autonomy policy and concrete permission mechanics are separate decisions | `guard-*`, `cap-*`, and `references` |
-| Memory taxonomy and freshness caveats | Durable memory needs ownership and freshness rules | `cap-memory-strategy-design` plus `references` |
-| Context pressure and compaction behavior | Current working context must be curated independently of memory | `cap-context-engineering` plus `references` |
-| Coordinator-worker runtime | Delegation requires explicit ownership and merge discipline | `flow-agent-architecture-design`, `cap-subagent-orchestration`, and `references` |
-| Verification discipline before claims | Completion claims require fresh proof | `flow-verification-before-completion` and `eval-*` |
-| Internal skill library maintenance | The library itself needs governance and pruning | `meta-*` skills plus evaluator docs |
+| Plan-mode phases and interview flow | Agent work benefits from inspectable phases and explicit artifacts | core entry skills plus runtime `references` |
+| Permission modes, rules, and approval paths | Autonomy policy and concrete permission mechanics are separate decisions | `set-agent-autonomy-boundaries`, `design-agent-permissions`, and `references` |
+| Memory taxonomy and freshness caveats | Durable memory needs ownership and freshness rules | `design-agent-memory` plus `references` |
+| Context pressure and compaction behavior | Current working context must be curated independently of memory | `design-agent-context` plus `references` |
+| Coordinator-worker runtime | Delegation requires explicit ownership and merge discipline | `choose-agent-architecture`, `orchestrate-agent-subagents`, and `references` |
+| Verification discipline before claims | Completion claims require fresh proof | `verify-agent-readiness` and eval skills |
+| Internal skill library maintenance | The library itself needs governance and pruning | maintainer skills plus evaluator docs |
 
 ## Consequences For PromethOS
 

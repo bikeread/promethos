@@ -5,9 +5,10 @@
 When PromethOS is the only skill library in play, it can operate as a complete
 agent-system methodology stack:
 
-- `using-promethos` bootstraps the library
-- `flow-*` skills drive agent-domain flow
-- `cap-*`, `guard-*`, and `eval-*` skills provide the deeper decision logic
+- a routing/bootstrap skill bootstraps the library
+- core entry skills handle the first important decisions
+- design-deepening skills provide the deeper system logic
+- maintainer skills keep the library itself coherent
 
 ## PromethOS Alongside Broader Workflow Libraries
 
@@ -54,7 +55,7 @@ bootstrap rules, duplicated debugging steps, and conflicting planning flows.
 If both libraries are installed:
 
 - Use explicit prompts such as `use PromethOS`, `design the context strategy`,
-  `set the autonomy policy`, or `evaluate this agent workflow` when you want
+  `set the autonomy boundaries`, or `build agent evals` when you want
   PromethOS to lead.
 - Let the broader workflow system continue to own generic tasks unless the work
   is clearly about agent-system design or evaluation.

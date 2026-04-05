@@ -58,6 +58,7 @@ If the detail is still important, preserve it in a linked `reference`.
 
 - Generalize the decision, not the product wording.
 - Preserve lineage, but do not let lineage dictate the public interface.
+- Prefer task-first public names over internal taxonomy labels.
 - Prefer one stable skill plus a good reference over a skill body that tries to
   teach the full runtime.
 - Add new taxonomy only after examples, evals, and references fail to cover the

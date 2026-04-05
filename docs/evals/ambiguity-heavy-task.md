@@ -20,10 +20,10 @@ We need an agent that reviews PRs, manages release notes, debugs CI failures, an
 
 ## Recommended Skill Path
 
-- `using-promethos`
-- `flow-agent-requirements-clarification`
-- `guard-anti-bloat-scope-control`
-- `flow-agent-architecture-design` only after the scope is decomposed
+- `route-agent-design`
+- `define-agent-requirements`
+- `trim-agent-scope`
+- `choose-agent-architecture` only after the scope is decomposed
 
 ## Required Signals
 

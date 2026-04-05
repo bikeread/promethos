@@ -3,9 +3,10 @@
 ## Project Structure & Module Organization
 `skills/` is the canonical library. Each skill lives in
 `skills/<skill-name>/SKILL.md`; supporting files should stay beside it,
-typically in `references/`. Use the established prefixes: `flow-`, `cap-`,
-`guard-`, `eval-`, and `meta-`. Keep bootstrap and harness-mapping material
-under `skills/using-promethos/`. Contributor and platform docs live in
+typically in `references/`. Name skills with short, task-first, verb-led ids
+using lowercase letters, digits, and hyphens only. Keep bootstrap and
+harness-mapping material under the routing/bootstrap skill directory rather
+than scattering it across the library. Contributor and platform docs live in
 `docs/`, `CONTRIBUTING.md`, `.codex/INSTALL.md`, `GEMINI.md`, and
 `gemini-extension.json`. Automation lives in `scripts/` and
 `.github/workflows/`.
@@ -27,13 +28,14 @@ install or platform docs, also run a harness-specific smoke check, for example
 
 ## Coding Style & Naming Conventions
 Keep content portable across harnesses. Do not fork the same skill body per
-provider; put tool-mapping notes in
-`skills/using-promethos/references/`. Every `SKILL.md` must define `name`,
-`description`, and `when_to_use`, then include the exact headings enforced by
-the validator: `# Goal`, `## Inputs`, `## Non-Goals`, `## Workflow`,
-`## Output Contract`, `## Escalation`, and `## Common Failure Modes`. Follow
-the existing Markdown style: short paragraphs, direct bullets, and wrapped
-lines. Shell scripts should remain Bash with `set -euo pipefail`.
+provider; put tool-mapping notes in the routing/bootstrap skill's
+`references/` directory. Every `SKILL.md` must define `name`, `description`,
+and `when_to_use`, then include the exact headings enforced by the validator:
+`# Goal`, `## Inputs`, `## Non-Goals`, `## Workflow`, `## Output Contract`,
+`## Escalation`, and `## Common Failure Modes`. Keep `SKILL.md` concise and
+move long examples or variant-specific detail into `references/`. Follow the
+existing Markdown style: short paragraphs, direct bullets, and wrapped lines.
+Shell scripts should remain Bash with `set -euo pipefail`.
 
 ## Testing Guidelines
 Validation is the test gate for this repo. Run both
@@ -45,7 +47,7 @@ flows, note the manual verification you performed.
 ## Commit & Pull Request Guidelines
 `main` currently has no commit history, so there is no established subject-line
 pattern to copy. Use short imperative commits such as
-`Add meta-skill-evolution guidance`. Keep PRs narrow and explicit. Include the
+`Add evolve-skill-library guidance`. Keep PRs narrow and explicit. Include the
 affected paths, why the change is needed, validator results, and any manual
 smoke checks for Codex, Claude Code, or Gemini. Screenshots are usually not
 needed; command output and linked docs are more useful.

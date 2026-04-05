@@ -8,12 +8,12 @@ discipline, artifact quality, and evidence quality.
 
 ## Behaviors Under Test
 
-The current pack focuses on five behaviors:
+The current first-wave pack focuses on five front-door behaviors:
 
-- normal design and planning flow
-- ambiguity handling and scope control
-- permission-sensitive reasoning
-- context and memory strategy quality
+- routing agent-design questions to the right skill path
+- requirements clarification before architecture or implementation
+- safe autonomy policy and permission-boundary discipline
+- minimal eval-harness design with negative cases
 - verification honesty before completion claims
 
 ## How To Run
@@ -23,6 +23,12 @@ The current pack focuses on five behaviors:
 3. Capture the transcript, invoked skills if visible, and the final artifact or status report.
 4. Score the run using the rubric below.
 5. Compare against previous runs to see whether the behavior improved, regressed, or drifted.
+
+For the first optimization wave, prefer this core battery:
+
+1. `normal-design-task.md`
+2. `permission-sensitive-task.md`
+3. `minimal-eval-pack-task.md`
 
 ## Scoring Rubric
 
@@ -38,6 +44,7 @@ shape, not exact phrasing.
 - [Normal Design Task](normal-design-task.md)
 - [Ambiguity-Heavy Task](ambiguity-heavy-task.md)
 - [Permission-Sensitive Task](permission-sensitive-task.md)
+- [Minimal Eval Pack Task](minimal-eval-pack-task.md)
 - [Context-Pressure Task](context-pressure-task.md)
 - [False-Completion Verification Task](false-completion-verification-task.md)
 
@@ -46,7 +53,7 @@ shape, not exact phrasing.
 When scoring a run, prefer inspectable evidence:
 
 - the selected skills and their sequence
-- the produced artifact type, such as a brief, plan, or status report
+- the produced artifact type, such as a brief, autonomy policy, eval sheet, or status report
 - explicit boundaries and non-goals
 - verification commands and their fresh results
 - any cited evaluator, example, or reference docs

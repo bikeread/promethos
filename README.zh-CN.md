@@ -9,7 +9,8 @@ agent 系统。
 计、上下文、记忆、权限、工具契约、护栏、评估与库本身的维护。
 
 PromethOS 目前仍处于早期公开预览阶段：共享的 `skills/` 契约已经足够稳定，可
-以实际使用和扩展，但安装与分发仍然有意保持为轻量、以文档为主的方式。
+以实际使用和扩展；安装与分发则继续保持轻量，优先通过 `skills` CLI，手动安装
+作为备用路径。
 
 ## 设计谱系
 
@@ -40,20 +41,26 @@ PromethOS 为 agent 提供了一套结构化方法，用于回答这些关键问
 
 ## 快速开始
 
-1. 克隆仓库。
-2. 根据你使用的 harness 选择安装文档：
+1. 如果你使用 Codex，推荐直接用 `skills` CLI 全局安装：
+
+   ```bash
+   npx skills add bikeread/promethos -g -a codex -s '*' --copy -y
+   ```
+
+2. 重启 Codex，然后确认 bootstrap 路由 skill 已可见。
+3. 如果你更偏好手动安装，或使用其他 harness，请按对应文档操作：
    [Codex](.codex/INSTALL.md)、
    [Claude Code](docs/README.claude-code.md)、
    [Gemini CLI](docs/README.gemini.md)。
-3. 重启对应的 harness，然后确认 `using-promethos` 已可见。
 
 ## 工作方式
 
-1. `using-promethos` 负责判断：当前任务里，PromethOS 应该作为主工作流层，还是作
-   为 agent 领域的覆盖层使用。
-2. `flow-*` skills 负责推进 agent 领域的设计与规划流程。
-3. `cap-*`、`guard-*` 和 `eval-*` skills 负责提升子系统质量、安全性和证据质量。
-4. `meta-*` skills 负责维护这套 skills 库本身。
+1. 一个 routing/bootstrap skill 负责判断：PromethOS 是否应该接手，
+   以及当前最先要回答的是哪个 agent 设计问题。
+2. 核心入口层负责处理最常见、最先发生的决策：需求、自治边界、eval、
+   调试和 readiness 验证。
+3. 设计深化层负责架构、实现规划、上下文、记忆、权限、工具契约、委派和范围控制。
+4. 维护者层负责 skill 编写、库演化，以及把事故沉淀成可复用改进。
 
 ## 支持矩阵
 
@@ -63,23 +70,22 @@ PromethOS 为 agent 提供了一套结构化方法，用于回答这些关键问
 | Codex | 已提供文档 | [.codex/INSTALL.md](.codex/INSTALL.md) / [docs/README.codex.md](docs/README.codex.md) |
 | Gemini CLI | 兼容 | [docs/README.gemini.md](docs/README.gemini.md) |
 
-## Skill 分类
+## Library Shape
 
-当前这套库包含：
+PromethOS 正在被整理成三层公开结构：
 
-- `flow-*`：负责流程推进与工作阶段切换
-- `cap-*`：负责特定子系统的设计质量
-- `guard-*`：负责自治、风险与范围控制
-- `eval-*`：负责评估、复盘与学习闭环
-- `meta-*`：负责维护与演化 skills 库
-- `using-promethos`：作为 bootstrap skill
+- 核心入口层：`route-agent-design`、`define-agent-requirements`、
+  `set-agent-autonomy-boundaries`、`build-agent-evals`、
+  `debug-agent-failures`、`verify-agent-readiness`
+- 设计深化层：架构、实现规划、上下文、记忆、权限、工具契约、委派与范围控制
+- 维护者层：skill 编写、库演化、事故到改进
 
 ## 兼容性
 
 PromethOS 既可以独立使用，也可以与更通用的工作流型 skill 库（例如 superpowers）
 共存。
 
-- 如果只安装 PromethOS，`using-promethos` 可以引导完整的方法论流程。
+- 如果只安装 PromethOS，routing/bootstrap skill 可以引导完整的方法论流程。
 - 如果已经有更强的会话级工作流系统在运行，应让它继续负责通用流程控制，例如
   brainstorming、通用实现规划和会话级执行纪律。
 - 在共存模式下，PromethOS 负责 agent 系统的需求、架构、上下文、记忆、权限、自

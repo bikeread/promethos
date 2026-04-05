@@ -51,9 +51,9 @@ next step such as manual compact or clear, not a generic failure message.
 
 ## What This Means For PromethOS
 
-- `cap-context-engineering` should assume compaction changes what remains safe
+- `design-agent-context` should assume compaction changes what remains safe
   to trust in active context.
-- `cap-memory-strategy-design` should distinguish extracted session memory from
+- `design-agent-memory` should distinguish extracted session memory from
   canonical source material.
 - evaluator docs and future eval fixtures should include at least one
   context-pressure case and one compaction-recovery case.

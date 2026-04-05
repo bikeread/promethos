@@ -45,9 +45,9 @@ reviewers can inspect what the system actually relied on.
 
 ## What This Means For PromethOS
 
-- `cap-memory-strategy-design` should explicitly cover dedup, freshness, and
+- `design-agent-memory` should explicitly cover dedup, freshness, and
   fallback behavior rather than only storage categories.
-- `cap-context-engineering` examples should assume recalled memory is a helper,
+- `design-agent-context` examples should assume recalled memory is a helper,
   not unquestioned truth.
 - future eval fixtures should include stale-memory and duplicate-memory cases.
 

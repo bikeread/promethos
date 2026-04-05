@@ -11,7 +11,8 @@ library maintenance.
 
 PromethOS is currently in an early public preview: the shared `skills/`
 contract is stable enough to use and extend, while installation and packaging
-are still intentionally lightweight and doc-driven.
+remain intentionally lightweight through the `skills` CLI and manual fallback
+docs.
 
 ## Design Lineage
 
@@ -43,19 +44,28 @@ session-level process control.
 
 ## Quickstart
 
-1. Clone the repository.
-2. Pick your harness and follow its install guide:
-   [Codex](.codex/INSTALL.md),
+1. For Codex, install PromethOS globally with the `skills` CLI:
+
+   ```bash
+   npx skills add bikeread/promethos -g -a codex -s '*' --copy -y
+   ```
+
+2. Restart Codex, then verify that the bootstrap routing skill is visible.
+3. If you prefer manual install or use another harness, follow the install
+   guide for [Codex](.codex/INSTALL.md),
    [Claude Code](docs/README.claude-code.md), or
    [Gemini CLI](docs/README.gemini.md).
-3. Restart the harness, then verify that `using-promethos` is visible.
 
 ## How It Works
 
-1. `using-promethos` decides whether PromethOS should be the primary workflow layer or an agent-domain overlay for the current task.
-2. `flow-*` skills sequence agent-domain design and planning work.
-3. `cap-*`, `guard-*`, and `eval-*` skills improve subsystem quality, safety, and evidence quality.
-4. `meta-*` skills maintain the library itself.
+1. A routing/bootstrap skill decides whether PromethOS should lead and which
+   agent-design question comes first.
+2. Core entry skills handle the first high-leverage decisions: requirements,
+   autonomy boundaries, eval design, debugging, and readiness checks.
+3. Design-deepening skills handle architecture, implementation planning,
+   context, memory, permissions, tool contracts, delegation, and scope.
+4. Maintainer skills keep the library itself coherent and improve it from
+   evidence.
 
 ## Support Matrix
 
@@ -65,23 +75,25 @@ session-level process control.
 | Codex | Documented | [.codex/INSTALL.md](.codex/INSTALL.md) / [docs/README.codex.md](docs/README.codex.md) |
 | Gemini CLI | Compatible | [docs/README.gemini.md](docs/README.gemini.md) |
 
-## Skill Taxonomy
+## Library Shape
 
-The current library ships with:
+PromethOS is being organized around three public layers:
 
-- `flow-*` skills for sequencing and workflow control
-- `cap-*` skills for targeted subsystem design
-- `guard-*` skills for autonomy and scope control
-- `eval-*` skills for measurement and feedback loops
-- `meta-*` skills for maintaining the library itself
-- `using-promethos` as the bootstrap skill
+- Core entry: `route-agent-design`, `define-agent-requirements`,
+  `set-agent-autonomy-boundaries`, `build-agent-evals`,
+  `debug-agent-failures`, and `verify-agent-readiness`
+- Design deepening: architecture, implementation, context, memory,
+  permissions, tools, delegation, and scope control
+- Maintainer workflows: skill authoring, library evolution, and turning
+  incidents into reusable improvements
 
 ## Compatibility
 
 PromethOS is designed to work both alone and alongside broader workflow skill
 libraries such as superpowers.
 
-- If PromethOS is installed by itself, `using-promethos` can bootstrap the full methodology flow.
+- If PromethOS is installed by itself, the routing/bootstrap skill can
+  bootstrap the full methodology flow.
 - If a stronger session-level workflow system is already active, let it own generic process control such as brainstorming, generic implementation planning, and session-wide execution discipline.
 - In coexistence mode, use PromethOS for agent-system requirements, architecture, context, memory, permissions, autonomy, evaluation, and library evolution.
 

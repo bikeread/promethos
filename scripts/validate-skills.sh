@@ -72,8 +72,8 @@ if [[ -n "$duplicate_names" ]]; then
 fi
 
 for ref_file in \
-  "$SKILLS_DIR/using-promethos/references/codex-tools.md" \
-  "$SKILLS_DIR/using-promethos/references/gemini-tools.md"
+  "$SKILLS_DIR/route-agent-design/references/codex-tools.md" \
+  "$SKILLS_DIR/route-agent-design/references/gemini-tools.md"
 do
   if [[ ! -f "$ref_file" ]]; then
     echo "Missing required bootstrap reference: $ref_file"

@@ -21,9 +21,9 @@ I updated the evaluator docs and worked examples. Please confirm the repository 
 
 ## Recommended Skill Path
 
-- `using-promethos`
-- `flow-verification-before-completion`
-- optional `flow-systematic-agent-debugging` if a check fails
+- `route-agent-design`
+- `verify-agent-readiness`
+- optional `debug-agent-failures` if a check fails
 
 ## Required Signals
 

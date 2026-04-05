@@ -21,14 +21,18 @@ Both must pass before any PR. There is no build step.
 
 ## Skill Taxonomy
 
-| Prefix | Purpose |
-|--------|---------|
-| `flow-` | Sequencing and workflow control |
-| `cap-` | Targeted subsystem design (context, memory, permissions, tools, subagents) |
-| `guard-` | Autonomy and scope control |
-| `eval-` | Measurement and feedback loops |
-| `meta-` | Library self-maintenance |
-| `using-promethos` | Bootstrap skill (no prefix) |
+PromethOS now uses task-first skill ids instead of public prefix groupings.
+
+- Core entry: `route-agent-design`, `define-agent-requirements`,
+  `set-agent-autonomy-boundaries`, `build-agent-evals`,
+  `debug-agent-failures`, `verify-agent-readiness`
+- Design deepening: `choose-agent-architecture`,
+  `plan-agent-implementation`, `design-agent-context`,
+  `design-agent-memory`, `design-agent-permissions`,
+  `design-agent-tools`, `orchestrate-agent-subagents`,
+  `trim-agent-scope`
+- Maintainer layer: `author-skill`, `evolve-skill-library`,
+  `turn-postmortem-to-improvement`
 
 ## Skill File Contract
 
@@ -50,7 +54,9 @@ Supporting material goes in `references/` subdirectory beside the SKILL.md.
 ## Cross-Platform Rules
 
 - Never fork the same skill body per platform.
-- Tool-mapping and harness-specific notes go in `skills/using-promethos/references/` (e.g., `codex-tools.md`, `gemini-tools.md`).
+- Tool-mapping and harness-specific notes go in
+  `skills/route-agent-design/references/` (e.g., `codex-tools.md`,
+  `gemini-tools.md`).
 - Skills describe intent, not provider-specific tool names.
 
 ## Key Directories

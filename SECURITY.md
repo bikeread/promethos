@@ -18,7 +18,7 @@ documentation that encourages risky actions without clear safeguards.
 
 ## What To Include
 
-- Affected file or skill path, for example `skills/guard-safe-autonomy-guardrails/SKILL.md`
+- Affected file or skill path, for example `skills/set-agent-autonomy-boundaries/SKILL.md`
 - The risky behavior and why it matters
 - Minimal reproduction steps
 - Suggested mitigation, if known

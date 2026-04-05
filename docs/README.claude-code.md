@@ -3,16 +3,26 @@
 Claude Code expects skills to appear as individual directories under
 `~/.claude/skills/`.
 
-## Installation
+## Recommended: Install With `skills` CLI
 
-1. Put this repository at `~/.claude/promethos`.
-2. Create the Claude Code skills directory if needed:
+Install the full library globally for Claude Code:
+
+```bash
+npx skills add bikeread/promethos -g -a claude-code -s '*' --copy -y
+```
+
+Start a new Claude Code session after installation.
+
+## Manual Install Fallback
+
+If you prefer to work from a local clone, put this repository at
+`~/.claude/promethos`, create the Claude Code skills directory if needed:
 
 ```bash
 mkdir -p ~/.claude/skills
 ```
 
-3. Link each PromethOS skill directory into Claude Code's skills directory:
+Then link each PromethOS skill directory into Claude Code's skills directory:
 
 ```bash
 for dir in ~/.claude/promethos/skills/*; do
@@ -31,15 +41,14 @@ Get-ChildItem $source -Directory | ForEach-Object {
 }
 ```
 
-4. Start a new Claude Code session.
-
 ## Verify
 
-Ask Claude Code about `using-promethos` or another PromethOS skill and confirm
-that it can describe the library.
+- CLI install: `npx skills ls -g`
+- Manual install: `ls -la ~/.claude/skills/route-agent-design`
+- In Claude Code, ask about `route-agent-design` or another PromethOS skill and
+  confirm it can describe the library.
 
 ## Notes
 
-- Marketplace packaging is intentionally deferred in `v1`.
-- The repository still ships one canonical `skills/` directory; Claude Code
-  just needs those directories exposed individually.
+- The repository still ships one canonical `skills/` directory.
+- The `skills` CLI installs Claude Code-compatible skill directories directly.

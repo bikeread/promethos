@@ -6,20 +6,29 @@ demand.
 
 ## Quick Install
 
-Follow [../.codex/INSTALL.md](../.codex/INSTALL.md).
+Recommended:
+
+```bash
+npx skills add bikeread/promethos -g -a codex -s '*' --copy -y
+```
+
+Manual fallback: [../.codex/INSTALL.md](../.codex/INSTALL.md).
 
 ## How It Works
 
-Codex scans `~/.agents/skills/` at startup and reads `SKILL.md` frontmatter to
-decide what to load.
+Codex scans `~/.agents/skills/` and reads `SKILL.md` frontmatter to decide
+what to load. The recommended `skills` CLI command installs PromethOS directly
+into that global directory.
 
 With PromethOS installed, Codex sees:
 
 ```text
-~/.agents/skills/promethos/ -> ~/.codex/promethos/skills/
+~/.agents/skills/route-agent-design/
+~/.agents/skills/define-agent-requirements/
+...
 ```
 
-The `using-promethos` bootstrap skill then tells the agent when PromethOS
+The `route-agent-design` bootstrap skill then tells the agent when PromethOS
 should lead directly and when it should act as an agent-domain layer inside a
 broader workflow.
 
@@ -35,10 +44,12 @@ If `superpowers` or another broader workflow library is also installed:
 
 ## Updating
 
-Update your local clone and restart Codex.
+- `skills` CLI install: run `npx skills update`
+- Manual install: update your local clone and restart Codex
 
 ## Troubleshooting
 
-- Verify the symlink: `ls -la ~/.agents/skills/promethos`
-- Verify the skill directories exist: `find ~/.codex/promethos/skills -maxdepth 2 -name SKILL.md`
+- Verify the installed skills: `npx skills ls -g`
+- Verify a PromethOS skill exists on disk: `ls -la ~/.agents/skills/route-agent-design`
+- If you installed manually, verify the local clone: `find ~/.codex/promethos/skills -maxdepth 2 -name SKILL.md`
 - Restart Codex after any change to skill layout

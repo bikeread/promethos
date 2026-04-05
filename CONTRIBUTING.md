@@ -12,13 +12,11 @@ portable across harnesses.
 
 ## Naming Rules
 
-- Taxonomy skills use these prefixes:
-  - `flow-`
-  - `cap-`
-  - `guard-`
-  - `eval-`
-  - `meta-`
-- Bootstrap and compatibility content belongs under `using-promethos`.
+- Use lowercase letters, digits, and hyphens only.
+- Prefer short, verb-led task names that match user intent.
+- Keep public grouping in docs and examples; do not rely on taxonomy prefixes
+  as the public naming system.
+- Bootstrap and compatibility content belongs under the routing/bootstrap skill.
 
 ## Required Frontmatter
 
@@ -43,10 +41,10 @@ Every `SKILL.md` must include these headings:
 ## Cross-Platform Rules
 
 - Do not fork the same skill body per platform.
-- Put tool-mapping or harness-specific notes in
-  `skills/using-promethos/references/`.
-- Taxonomy skills should describe intent and ownership, not depend on one
-  provider's exact tool names.
+- Put tool-mapping or harness-specific notes in the routing/bootstrap skill's
+  `references/` directory.
+- Skills should describe intent and ownership, not depend on one provider's
+  exact tool names.
 
 ## Public Content Rules
 

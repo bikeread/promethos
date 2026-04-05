@@ -2,10 +2,33 @@
 
 PromethOS works with Codex through native skill discovery.
 
-## Installation
+## Recommended: Install With `skills` CLI
 
-1. Put this repository at `~/.codex/promethos`.
-2. Expose the shared `skills/` directory to Codex:
+Install the full library globally for Codex:
+
+```bash
+npx skills add bikeread/promethos -g -a codex -s '*' --copy -y
+```
+
+This command installs every PromethOS skill under `~/.agents/skills/`, which
+matches Codex's standard discovery path.
+
+Restart Codex after installation.
+
+## Verify
+
+```bash
+npx skills ls -g
+ls -la ~/.agents/skills/route-agent-design
+```
+
+You should see the PromethOS skills in the CLI output and a populated
+`~/.agents/skills/route-agent-design` directory on disk.
+
+## Manual Install Fallback
+
+If you prefer to work from a local clone, put this repository at
+`~/.codex/promethos` and expose the shared `skills/` directory to Codex:
 
 ```bash
 mkdir -p ~/.agents/skills
@@ -18,17 +41,6 @@ Windows (PowerShell):
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\\.agents\\skills"
 cmd /c mklink /J "$env:USERPROFILE\\.agents\\skills\\promethos" "$env:USERPROFILE\\.codex\\promethos\\skills"
 ```
-
-3. Restart Codex.
-
-## Verify
-
-```bash
-ls -la ~/.agents/skills/promethos
-```
-
-You should see a symlink or junction pointing to the repository's `skills/`
-directory.
 
 ## Coexistence With Superpowers
 
@@ -46,10 +58,21 @@ evolution tasks.
 
 ## Updating
 
-Update the repository in place. The symlinked skills become visible on the next
-Codex restart.
+If you installed with the `skills` CLI:
+
+```bash
+npx skills update
+```
+
+If you installed manually, update the repository in place. The symlinked skills
+become visible on the next Codex restart.
 
 ## Uninstalling
+
+If you installed with the `skills` CLI, run `npx skills remove -g` and select
+the PromethOS skills interactively.
+
+If you installed manually:
 
 ```bash
 rm ~/.agents/skills/promethos

@@ -45,8 +45,8 @@ flags only.
 
 ## What This Means For PromethOS
 
-- `guard-safe-autonomy-guardrails` should own which actions need approval.
-- `cap-permission-model-design` should own how modes, classes, defaults, and
+- `set-agent-autonomy-boundaries` should own which actions need approval.
+- `design-agent-permissions` should own how modes, classes, defaults, and
   denial behavior are implemented.
 - worked examples and evaluator docs should check that these two layers stay
   separate.

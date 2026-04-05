@@ -42,7 +42,7 @@ storage. If it does not affect those things, it is just a label.
 
 ## What This Means For PromethOS
 
-- `flow-agent-implementation-planning` should assume plan artifacts may need
+- `plan-agent-implementation` should assume plan artifacts may need
   explicit approval in some runtimes.
 - evaluator docs should treat missing approval evidence as a meaningful outcome
   issue, not a cosmetic gap.
