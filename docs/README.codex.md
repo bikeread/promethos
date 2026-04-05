@@ -40,7 +40,10 @@ If `superpowers` or another broader workflow library is also installed:
 - use PromethOS for agent-system requirements, architecture, context, memory,
   permissions, autonomy, evaluation, and library evolution,
 - prefer explicit prompts such as `use PromethOS` when you want PromethOS to
-  take the lead on an agent-domain task.
+  take the lead on an agent-domain task,
+- expect generic repository merge-readiness and completion-verification checks
+  to stay with the broader workflow layer unless you explicitly ask PromethOS
+  to verify an agent-domain deliverable.
 
 ## Updating
 

@@ -3,7 +3,8 @@ name: debug-agent-failures
 description: Turn a vague agent failure into a root cause and a small next fix.
 when_to_use: >-
   Use PROACTIVELY when an agent fails repeatedly or loops. Reproduce the
-  symptom, form hypotheses, test the smallest fix before redesigning.
+  symptom, form hypotheses, test the smallest fix before redesigning, and stay
+  anchored to local evidence instead of broad pattern hunting.
 ---
 
 # Goal
@@ -25,6 +26,8 @@ fix.
 - The same tool call fails more than once
 - The agent loops back to a step it already tried
 - The user says "又出错了" or "it broke again"
+- The user says "it keeps looping", "it got worse after the change", or
+  "the same failure keeps coming back"
 - Output quality degrades after a change
 - A hallucination appears in tool-calling arguments
 

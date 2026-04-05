@@ -3,7 +3,8 @@ name: define-agent-requirements
 description: Turn a vague agent idea into a concrete requirements brief.
 when_to_use: >-
   Use when the user says things like "I want a bot/assistant/agent that..." but
-  the first version, success bar, or operating boundaries are still fuzzy.
+  the first version, success bar, operating boundaries, or even "what should
+  v1 actually do" are still fuzzy.
 ---
 
 # Goal
@@ -24,6 +25,7 @@ implementation planning.
 ### Trigger signals
 - User describes an agent idea without clear boundaries or success criteria
 - User says "帮我搞个 bot", "想做个 agent", or "I want an assistant that..."
+- User says "I'm not sure what the first version should do" or "what should v1 be"
 - Features are listed without stating who the user is or what success looks like
 - Someone skips straight to architecture, permissions, or implementation before the goal is pinned down
 

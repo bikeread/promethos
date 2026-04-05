@@ -3,7 +3,8 @@ name: choose-agent-architecture
 description: Choose single-agent vs multi-agent and set boundaries.
 when_to_use: >-
   Use when the agent's job is clear and you need to pick the right
-  structure, component split, or single-vs-multi-agent decision.
+  structure, component split, or single-vs-multi-agent decision — not when
+  the job itself is still fuzzy.
 ---
 
 # Goal
@@ -30,6 +31,9 @@ unnecessary complexity.
 ### 1. Restate the architectural pressure
 Summarize the requirement forces that actually matter: tool use, planning
 complexity, long-running work, memory needs, approval boundaries, or delegation.
+If the job, beneficiary, or success bar is still unclear, stop and send the
+work back to `define-agent-requirements` instead of smuggling requirement work
+into the architecture step.
 **Success criteria**: The architecture discussion is anchored in explicit design
 pressure instead of generic agent buzzwords.
 

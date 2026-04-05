@@ -3,7 +3,9 @@ name: verify-agent-readiness
 description: Verify with fresh evidence before claiming an agent or change is ready.
 when_to_use: >-
   Use PROACTIVELY when about to declare success, ship, or move on. Run
-  checks first — do not wait for the user to ask for verification.
+  checks first — do not wait for the user to ask for verification. In
+  coexistence mode, prefer explicit PromethOS asks or clearly agent-domain
+  readiness work rather than generic repo-merge gates already owned elsewhere.
 ---
 
 # Goal
@@ -18,6 +20,8 @@ evidence.
 ## Non-Goals
 - Assuming the implementation is correct because the code looks clean
 - Treating partial checks as proof of total correctness
+- Replacing a broader workflow library's generic merge-readiness or
+  completion-verification path when coexistence rules already assign it there
 
 ## Workflow
 
@@ -27,6 +31,8 @@ evidence.
 - A fix was applied but not re-tested
 - Acceptance criteria exist but have not been checked with fresh evidence
 - Someone is about to claim completion based on inspection alone
+- The user explicitly asks PromethOS to verify an agent-domain deliverable,
+  eval pack, autonomy policy, or agent-system change before calling it ready
 
 ### 1. Translate each claim into a check
 List the specific requirement, fix, or success statement you are about to make
@@ -47,6 +53,9 @@ probable adjacent breakage.
 ### 4. Report the real status, not the hopeful one
 State what is verified, what remains unverified, and what the evidence actually
 supports.
+If a stronger session-level workflow system already owns generic merge-readiness
+in coexistence mode, say so explicitly instead of pretending PromethOS should
+override it by default.
 **Success criteria**: The final report is aligned with evidence rather than
 optimism.
 

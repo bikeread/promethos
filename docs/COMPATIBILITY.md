@@ -25,6 +25,7 @@ In practice, that means the broader workflow system usually keeps:
 - generic implementation execution flow
 - general debugging discipline
 - general completion-verification discipline
+- generic repository merge-readiness checks
 
 PromethOS should take the lead for:
 
@@ -59,6 +60,9 @@ If both libraries are installed:
   PromethOS to lead.
 - Let the broader workflow system continue to own generic tasks unless the work
   is clearly about agent-system design or evaluation.
+- If the question is plain repository readiness ("is this ready to merge?"),
+  expect the broader workflow layer to keep that role unless you explicitly ask
+  PromethOS to verify an agent-domain deliverable.
 
 ## Common Collision Points
 

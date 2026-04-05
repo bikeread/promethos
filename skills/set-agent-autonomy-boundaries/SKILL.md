@@ -3,7 +3,9 @@ name: set-agent-autonomy-boundaries
 description: Set what the agent may do alone vs what needs human review.
 when_to_use: >-
   Use PROACTIVELY when an agent design has no checkpoint policy yet or the
-  agent just did something risky the user did not expect.
+  agent just did something risky the user did not expect, especially when the
+  task mentions production changes, deployments, external messages, or other
+  consequential actions.
 ---
 
 # Goal
@@ -26,6 +28,9 @@ without silently taking high-risk actions.
 ### Trigger signals (for proactive recognition)
 - An agent has write or delete access but no checkpoint policy
 - The user lists agent capabilities without mentioning limits
+- The user mentions production config edits, deployment commands, external
+  messages, payments, or privacy-sensitive side effects without saying what
+  must stop for review
 - The agent just performed a risky action the user didn't expect
 - The conversation moved from "what should it do" to "how" without setting boundaries
 - Not for mapping the policy into concrete permission classes or runtime enforcement

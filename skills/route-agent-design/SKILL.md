@@ -4,7 +4,8 @@ description: Route an agent-design problem to the right PromethOS skill.
 when_to_use: >-
   Use PROACTIVELY when the user is defining, constraining, debugging, or
   evaluating an agent system — even if they only describe the symptom in
-  plain language.
+  plain language, ask "which PromethOS skill owns this", or explicitly say
+  "use PromethOS."
 ---
 
 # Goal
@@ -25,6 +26,16 @@ process control.
 - Treating one provider's tool names as universal
 
 ## Workflow
+
+### Trigger signals
+- User asks which PromethOS skill or path should own an agent-design problem
+- User says "use PromethOS", "which PromethOS skill should handle this", or
+  "route this to the right PromethOS skill"
+- The task sounds like agent requirements, autonomy, evaluation, debugging,
+  context, memory, permissions, or library evolution, but the first owner is
+  still unclear
+- The environment includes a broader workflow library and the main question is
+  whether PromethOS should lead or act as a domain overlay
 
 ### 0. Recognize agent-design signals in ordinary language
 
@@ -93,6 +104,33 @@ This is generic implementation work, not automatically a PromethOS task.
 Do not grab ownership just because an agent is involved somewhere in the
 background.
 → not PromethOS by default
+</commentary>
+</example>
+
+<example>
+user: "I updated the docs and examples. Is this repo ready to merge?"
+<commentary>
+This is generic repository readiness by default. In coexistence mode, let the
+broader workflow layer own it unless the user explicitly asks for PromethOS to
+verify an agent-domain deliverable.
+→ not PromethOS by default
+</commentary>
+</example>
+
+<example>
+user: "Use PromethOS and tell me which skill should own this agent-design task."
+<commentary>
+The user is explicitly asking for the routing/bootstrap layer.
+→ route-agent-design
+</commentary>
+</example>
+
+<example>
+user: "We keep hitting the same pattern in this library. Should it become a new skill?"
+<commentary>
+This is library-maintenance routing, not generic implementation work.
+- if the main question is whether the pattern deserves a skill → author-skill
+- if the main question is library overlap / keep-merge-split-archive → evolve-skill-library
 </commentary>
 </example>
 

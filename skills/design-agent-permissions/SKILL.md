@@ -25,6 +25,8 @@ predictable, reviewable, and safe to enforce.
 ### Trigger signals
 - Autonomy policy exists but tool-level permissions haven't been mapped
 - User asks "哪些操作需要审批" or "what needs approval"
+- The team already agrees on checkpoint philosophy, but still needs concrete
+  permission classes for writes, external calls, or destructive actions
 - Checkpoint rules exist in prose but not as enforceable defaults
 - Not for deciding the overall autonomy policy or checkpoint philosophy — that belongs in guardrails
 

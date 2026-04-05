@@ -3,7 +3,8 @@ name: build-agent-evals
 description: Build a small eval pack that catches agent regressions.
 when_to_use: >-
   Use when you need to test whether an agent actually works and catch
-  regressions early without building a giant benchmark.
+  regressions early without building a giant benchmark, especially when the
+  user asks for the smallest useful eval pack first.
 ---
 
 # Goal
@@ -24,6 +25,8 @@ false confidence early.
 ### Trigger signals
 - Agent is nearing completion but has no test cases
 - User asks "怎么验" or "how do we know it works"
+- User asks for the "smallest eval pack", "minimal eval harness", or "what
+  should we test first"
 - Behavior was recently changed and nothing checks for regressions
 - Agent has been deployed but no one defined what "working correctly" means
 
@@ -41,6 +44,8 @@ success, an ambiguous request, a tool failure, a recovery path, and any
 context-pressure case that is part of the real task.
 If the agent can take consequential actions, include at least one negative case
 for refusal, checkpointing, escalation, or approval-boundary compliance.
+If the user asks for the smallest useful pack, cut optional cases aggressively
+instead of letting the battery drift into a benchmark wishlist.
 Keep each scenario specific enough that a human can tell what good behavior
 looks like.
 **Success criteria**: The harness exercises the agent across success, failure,

@@ -25,11 +25,15 @@ without becoming stale, noisy, or risky.
 - User says "它忘了" or "it keeps forgetting"
 - Agent has no memory configuration but handles multi-session work
 - Preferences are being re-stated every conversation
+- Project facts and user preferences are starting to blur together
 - Memory is growing without expiry rules
 
 ### 1. Classify the information by durability and ownership
 Separate session state, project facts, user preferences, retrieved records, and
 ephemeral observations by how long they stay useful and who owns their truth.
+Be explicit about the difference between project truth (for example repository
+facts or policy) and user preferences so one does not silently overwrite the
+other.
 **Success criteria**: Each memory class has a distinct role and expected
 lifespan.
 

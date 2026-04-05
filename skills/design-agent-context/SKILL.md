@@ -3,7 +3,8 @@ name: design-agent-context
 description: Decide what the agent reads now vs retrieves later.
 when_to_use: >-
   Use when the agent reads too much, misses key files, or carries context
-  that grows without helping. Design eager vs deferred loading.
+  that grows without helping. Design eager vs deferred loading, especially for
+  long-running repo-maintenance or doc-heavy workflows.
 ---
 
 # Goal
@@ -25,6 +26,8 @@ overloading it or hiding critical information.
 - Agent loads many files but still misses the relevant one
 - Context window usage is high and growing
 - User says "it keeps loading too much" or "why didn't it read the right file"
+- The task is a long-running repo-maintenance or document-heavy workflow and
+  the initial working set is starting to sprawl
 - System prompt is getting long without a refresh or compression strategy
 
 ### 1. Define the task loop the agent must sustain
