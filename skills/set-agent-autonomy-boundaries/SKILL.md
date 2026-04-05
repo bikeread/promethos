@@ -1,11 +1,6 @@
 ---
 name: set-agent-autonomy-boundaries
-description: Set what the agent may do alone vs what needs human review.
-when_to_use: >-
-  Use PROACTIVELY when an agent design has no checkpoint policy yet or the
-  agent just did something risky the user did not expect, especially when the
-  task mentions production changes, deployments, external messages, or other
-  consequential actions.
+description: Use proactively when an agent lacks checkpoint policy or risky actions need clear human-review boundaries.
 ---
 
 # Goal

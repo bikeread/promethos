@@ -1,9 +1,6 @@
 ---
 name: plan-agent-implementation
-description: Turn an approved agent design into ordered build steps.
-when_to_use: >-
-  Use when architecture is settled and you need a concrete implementation
-  order with tasks, checkpoints, and validation steps.
+description: Use when architecture is settled and you need an ordered implementation plan with checkpoints and verification.
 ---
 
 # Goal

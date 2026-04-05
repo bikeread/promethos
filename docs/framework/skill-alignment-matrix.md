@@ -36,7 +36,7 @@
 
 | Current skill | Target public name | Generalized responsibility | Decision | Notes |
 |---|---|---|---|---|
-| `meta-skill-authoring` | `author-skill` | Turn a repeated decision point into a well-bounded skill | Rename now | Generalizes well beyond Claude Code |
+| `meta-skill-authoring` | — | Fold new-skill promotion back into `evolve-skill-library` instead of keeping a public maintainer skill | Do not promote | Direct-user library should keep maintainer entry points minimal |
 | `meta-skill-evolution` | `evolve-skill-library` | Prune and reshape the library based on evidence | Rename now | Should stay evidence-driven, not theory-driven |
 | `eval-postmortem-to-skill` | `turn-postmortem-to-improvement` | Turn incidents into reusable improvements | Rename now | The body already spans skill, rule, guardrail, and eval outcomes |
 

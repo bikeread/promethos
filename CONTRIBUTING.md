@@ -24,7 +24,9 @@ Every `SKILL.md` must define:
 
 - `name`
 - `description`
-- `when_to_use`
+
+Keep `name` + `description` at 250 characters or less, and put trigger
+conditions in `description` rather than a separate `when_to_use` field.
 
 ## Required Section Contract
 

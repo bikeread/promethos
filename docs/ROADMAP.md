@@ -4,7 +4,7 @@
 
 PromethOS `0.1.x` already has a usable methodology core:
 
-- 17 reusable skills that are being reorganized into core entry, design
+- 16 reusable skills that are being reorganized into core entry, design
   deepening, and maintainer layers
 - 1 routing/bootstrap path for cross-platform loading
 - platform install docs and basic repository validation

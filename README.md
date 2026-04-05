@@ -84,8 +84,8 @@ PromethOS is being organized around three public layers:
   `debug-agent-failures`, and `verify-agent-readiness`
 - Design deepening: architecture, implementation, context, memory,
   permissions, tools, delegation, and scope control
-- Maintainer workflows: skill authoring, library evolution, and turning
-  incidents into reusable improvements
+- Maintainer workflows: library evolution and turning incidents into reusable
+  improvements
 
 ## Compatibility
 

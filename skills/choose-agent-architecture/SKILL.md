@@ -1,10 +1,6 @@
 ---
 name: choose-agent-architecture
-description: Choose single-agent vs multi-agent and set boundaries.
-when_to_use: >-
-  Use when the agent's job is clear and you need to pick the right
-  structure, component split, or single-vs-multi-agent decision — not when
-  the job itself is still fuzzy.
+description: Use when an agent's job is clear and you need to choose structure, boundaries, or single-agent vs multi-agent.
 ---
 
 # Goal

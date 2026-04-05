@@ -1,9 +1,6 @@
 ---
 name: evolve-skill-library
-description: Review and prune the skill library for coherence.
-when_to_use: >-
-  Use when the library feels crowded, redundant, or stale and you need
-  to decide what to keep, merge, split, archive, or promote.
+description: Use when the skill library feels crowded, redundant, stale, or mis-scoped and needs pruning or reshaping.
 ---
 
 # Goal

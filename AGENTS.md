@@ -29,9 +29,11 @@ install or platform docs, also run a harness-specific smoke check, for example
 ## Coding Style & Naming Conventions
 Keep content portable across harnesses. Do not fork the same skill body per
 provider; put tool-mapping notes in the routing/bootstrap skill's
-`references/` directory. Every `SKILL.md` must define `name`, `description`,
-and `when_to_use`, then include the exact headings enforced by the validator:
-`# Goal`, `## Inputs`, `## Non-Goals`, `## Workflow`, `## Output Contract`,
+`references/` directory. Every `SKILL.md` must define `name` and
+`description`. Keep `name` + `description` at 250 characters or less, and put
+trigger language in `description` instead of a separate `when_to_use` field.
+Then include the exact headings enforced by the validator: `# Goal`,
+`## Inputs`, `## Non-Goals`, `## Workflow`, `## Output Contract`,
 `## Escalation`, and `## Common Failure Modes`. Keep `SKILL.md` concise and
 move long examples or variant-specific detail into `references/`. Follow the
 existing Markdown style: short paragraphs, direct bullets, and wrapped lines.

@@ -15,7 +15,7 @@ python3 ./scripts/check-repo-docs.py # required files + broken link checks
 
 Both must pass before any PR. There is no build step.
 
-`validate-skills.sh` checks: exactly one `SKILL.md` per skill directory, required frontmatter (`name`, `description`, `when_to_use`), required headings, no duplicate skill names, and presence of bootstrap reference files.
+`validate-skills.sh` checks: exactly one `SKILL.md` per skill directory, required frontmatter (`name`, `description`), combined `name` + `description` length of 250 characters or less, required headings, no duplicate skill names, and presence of bootstrap reference files.
 
 `check-repo-docs.py` checks: required repo files exist (README, CONTRIBUTING, AGENTS, LICENSE, SECURITY, CODE_OF_CONDUCT, platform install docs, issue templates, PR template) and all local Markdown links resolve.
 
@@ -31,14 +31,17 @@ PromethOS now uses task-first skill ids instead of public prefix groupings.
   `design-agent-memory`, `design-agent-permissions`,
   `design-agent-tools`, `orchestrate-agent-subagents`,
   `trim-agent-scope`
-- Maintainer layer: `author-skill`, `evolve-skill-library`,
+- Maintainer layer: `evolve-skill-library`,
   `turn-postmortem-to-improvement`
 
 ## Skill File Contract
 
 Every `skills/<skill-name>/SKILL.md` must have:
 
-**Frontmatter:** `name`, `description`, `when_to_use`
+**Frontmatter:** `name`, `description`
+
+Put trigger language in `description`; do not add a separate `when_to_use`
+field. Keep `name` + `description` at 250 characters or less.
 
 **Required headings (exact match):**
 - `# Goal`

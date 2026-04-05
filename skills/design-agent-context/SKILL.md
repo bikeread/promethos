@@ -1,10 +1,6 @@
 ---
 name: design-agent-context
-description: Decide what the agent reads now vs retrieves later.
-when_to_use: >-
-  Use when the agent reads too much, misses key files, or carries context
-  that grows without helping. Design eager vs deferred loading, especially for
-  long-running repo-maintenance or doc-heavy workflows.
+description: Use when an agent reads too much, misses key files, or needs a clear eager-vs-deferred context plan.
 ---
 
 # Goal

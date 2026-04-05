@@ -1,9 +1,6 @@
 ---
 name: turn-postmortem-to-improvement
-description: Turn an incident or success into a reusable improvement.
-when_to_use: >-
-  Use after a failure, correction, or great workflow to decide what
-  reusable change — guardrail, eval, skill, or rule — should come from it.
+description: Use after a failure, correction, or standout success to decide what reusable guardrail, eval, skill, or rule should follow.
 ---
 
 # Goal

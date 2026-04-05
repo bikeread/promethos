@@ -1,10 +1,6 @@
 ---
 name: define-agent-requirements
-description: Turn a vague agent idea into a concrete requirements brief.
-when_to_use: >-
-  Use when the user says things like "I want a bot/assistant/agent that..." but
-  the first version, success bar, operating boundaries, or even "what should
-  v1 actually do" are still fuzzy.
+description: Use when an agent idea is still fuzzy and v1 scope, success bar, or operating boundaries are not concrete.
 ---
 
 # Goal

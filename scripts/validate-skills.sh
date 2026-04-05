@@ -36,7 +36,7 @@ for dir in "${skill_dirs[@]}"; do
 
   skill_file="${skill_files[0]}"
 
-  for frontmatter_key in '^name:' '^description:' '^when_to_use:'; do
+  for frontmatter_key in '^name:' '^description:'; do
     if ! grep -qE "$frontmatter_key" "$skill_file"; then
       echo "Missing required frontmatter '$frontmatter_key' in $skill_file"
       FAILURES=1
@@ -54,6 +54,23 @@ for dir in "${skill_dirs[@]}"; do
     FAILURES=1
   else
     printf '%s\n' "$skill_name" >> "$NAME_FILE"
+  fi
+
+  skill_description="$(
+    sed -n 's/^description:[[:space:]]*//p' "$skill_file" \
+      | head -n 1 \
+      | tr -d '\r"' \
+      | tr -d "'"
+  )"
+  if [[ -z "$skill_description" ]]; then
+    echo "Could not parse skill description from $skill_file"
+    FAILURES=1
+  fi
+
+  metadata_length=$(( ${#skill_name} + ${#skill_description} ))
+  if [[ "$metadata_length" -gt 250 ]]; then
+    echo "Combined name+description exceeds 250 characters in $skill_file ($metadata_length)"
+    FAILURES=1
   fi
 
   for heading in "${required_headings[@]}"; do

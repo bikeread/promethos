@@ -1,10 +1,6 @@
 ---
 name: debug-agent-failures
-description: Turn a vague agent failure into a root cause and a small next fix.
-when_to_use: >-
-  Use PROACTIVELY when an agent fails repeatedly or loops. Reproduce the
-  symptom, form hypotheses, test the smallest fix before redesigning, and stay
-  anchored to local evidence instead of broad pattern hunting.
+description: Use proactively when an agent repeats a failure, loops, or degrades and needs a local root-cause check before redesign.
 ---
 
 # Goal

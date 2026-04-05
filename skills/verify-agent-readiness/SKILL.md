@@ -1,11 +1,6 @@
 ---
 name: verify-agent-readiness
-description: Verify with fresh evidence before claiming an agent or change is ready.
-when_to_use: >-
-  Use PROACTIVELY when about to declare success, ship, or move on. Run
-  checks first — do not wait for the user to ask for verification. In
-  coexistence mode, prefer explicit PromethOS asks or clearly agent-domain
-  readiness work rather than generic repo-merge gates already owned elsewhere.
+description: Use proactively before declaring success, shipping, or moving on when an agent or change needs fresh verification evidence.
 ---
 
 # Goal

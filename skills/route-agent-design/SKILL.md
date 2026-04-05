@@ -1,11 +1,6 @@
 ---
 name: route-agent-design
-description: Route an agent-design problem to the right PromethOS skill.
-when_to_use: >-
-  Use PROACTIVELY when the user is defining, constraining, debugging, or
-  evaluating an agent system — even if they only describe the symptom in
-  plain language, ask "which PromethOS skill owns this", or explicitly say
-  "use PromethOS."
+description: Use proactively when a user is defining, constraining, debugging, or evaluating an agent system and needs the right PromethOS skill.
 ---
 
 # Goal
@@ -129,8 +124,10 @@ The user is explicitly asking for the routing/bootstrap layer.
 user: "We keep hitting the same pattern in this library. Should it become a new skill?"
 <commentary>
 This is library-maintenance routing, not generic implementation work.
-- if the main question is whether the pattern deserves a skill → author-skill
-- if the main question is library overlap / keep-merge-split-archive → evolve-skill-library
+- if the main question is whether the pattern deserves promotion into a skill
+  → evolve-skill-library
+- if the main question is library overlap / keep-merge-split-archive
+  → evolve-skill-library
 </commentary>
 </example>
 
@@ -173,11 +170,12 @@ subsystem design, and maintainer skills only when editing the library itself.
 **Success criteria**: Each loaded PromethOS skill has a clear ownership
 boundary and is used for an agent-domain reason.
 
-### 5. Use meta skills only for library maintenance
-Load `meta-*` skills when editing the library itself, not as a substitute for
-ordinary execution guidance.
-**Success criteria**: Meta skills are used to maintain PromethOS, not to steer
-unrelated implementation work.
+### 5. Use maintainer skills only for library maintenance
+Load maintainer skills such as `evolve-skill-library` or
+`turn-postmortem-to-improvement` when editing the library itself, not as a
+substitute for ordinary execution guidance.
+**Success criteria**: Maintainer skills are used to maintain PromethOS, not to
+steer unrelated implementation work.
 
 ### 6. Adapt tool references to the current harness
 PromethOS skills may mention provider-specific tool names in examples or

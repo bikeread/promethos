@@ -1,9 +1,6 @@
 ---
 name: orchestrate-agent-subagents
-description: Split delegated work across subagents with clear ownership.
-when_to_use: >-
-  Use when delegation is warranted and you need to decide how workers
-  split ownership, receive context, and merge results safely.
+description: Use when delegation is already justified and you need safe subagent ownership, context, and merge boundaries.
 ---
 
 # Goal

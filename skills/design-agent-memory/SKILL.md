@@ -1,9 +1,6 @@
 ---
 name: design-agent-memory
-description: Choose what the agent remembers vs fetches fresh.
-when_to_use: >-
-  Use when deciding what persists across turns or sessions and what should
-  be retrieved on demand. Covers session, project, and preference memory.
+description: Use when deciding what an agent should remember across turns or sessions versus fetch on demand.
 ---
 
 # Goal

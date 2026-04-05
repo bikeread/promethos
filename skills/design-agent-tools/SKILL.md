@@ -1,9 +1,6 @@
 ---
 name: design-agent-tools
-description: Design a tool interface an agent can use correctly.
-when_to_use: >-
-  Use when a tool contract is unclear or an agent misuses a tool because
-  the inputs, errors, or side effects are underspecified.
+description: Use when a tool is misused or underspecified because its inputs, errors, or side effects are unclear.
 ---
 
 # Goal

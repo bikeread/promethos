@@ -1,10 +1,6 @@
 ---
 name: build-agent-evals
-description: Build a small eval pack that catches agent regressions.
-when_to_use: >-
-  Use when you need to test whether an agent actually works and catch
-  regressions early without building a giant benchmark, especially when the
-  user asks for the smallest useful eval pack first.
+description: Use when an agent needs the smallest useful eval pack to catch regressions or false confidence early.
 ---
 
 # Goal

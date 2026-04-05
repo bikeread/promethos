@@ -1,9 +1,6 @@
 ---
 name: design-agent-permissions
-description: Map a chosen autonomy policy to concrete permission classes.
-when_to_use: >-
-  Use only after the autonomy policy is already set and you now need
-  permission classes, defaults, approval modes, and denial behavior.
+description: Use after autonomy policy is set and you need permission classes, defaults, approvals, and denial behavior.
 ---
 
 # Goal

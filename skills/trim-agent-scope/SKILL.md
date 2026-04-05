@@ -1,9 +1,6 @@
 ---
 name: trim-agent-scope
-description: Cut scope back to the smallest useful job.
-when_to_use: >-
-  Use PROACTIVELY when a plan, skill, or agent absorbs side quests and
-  keeps growing. Trim to the core job before complexity gets worse.
+description: Use proactively when a plan, skill, or agent keeps absorbing side quests and needs to return to core scope.
 ---
 
 # Goal
